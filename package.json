@@ -1,0 +1,28 @@
+{
+  "name": "yelpcamp",
+  "version": "1.0.0",
+  "description": "This repository contains YelpCamp proect from the Web Developer Bootcamp 2025 Udemy course. The course covers fundamental and advanced web development topics, including HTML, CSS, JavaScript, Node.js, Express.js, MongoDB, and more.",
+  "main": "app.js",
+  "scripts": {
+    "dev": "nodemon app"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sidiBks/yelpCamp.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sidiBks/yelpCamp/issues"
+  },
+  "homepage": "https://github.com/sidiBks/yelpCamp#readme",
+  "dependencies": {
+    "ejs": "^3.1.10",
+    "express": "^4.21.2",
+    "mongoose": "^8.9.6"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.9"
+  }
+}
