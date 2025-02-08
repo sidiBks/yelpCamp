@@ -2,6 +2,7 @@ const { campgroundSchema, reviewSchema } = require('./schemas')
 const ExpressError = require('./utils/ExpressError')
 const Campground = require('./models/campground.model')
 const Review = require('./models/review.model')
+const passport = require('passport')
 
 
 module.exports.isLoggedIn = (req, res, next) => {
@@ -60,3 +61,4 @@ module.exports.validateReview = (req, res, next) => {
     }
 }
 
+module.exports.passportAuth = passport.authenticate('local', { failureFlash: true, failureRedirect: '/login' })
