@@ -9,7 +9,6 @@ const flash = require('connect-flash')
 const passport = require('passport')
 const localStrategy = require('passport-local')
 const User = require('./models/user.model')
-
 const userRoutes = require('./routes/user.route')
 const campgroundRoute = require('./routes/campground.route')
 const reviewRoute = require('./routes/review.route')
