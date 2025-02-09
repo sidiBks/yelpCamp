@@ -2,7 +2,7 @@
     <div class="row">
         <h1 class="text-center">New Campground</h1>
         <div class="col-6 offset-3">
-            <form action="/campgrounds" method="post" novalidate class="validated-form">
+            <form action="/campgrounds" method="post" novalidate class="validated-form" enctype="multipart/form-data">
                 <div class="mb-3">
                     <label class="form-label" for="title">Title</label>
                     <input class="form-control" type="text" id="title" name="campground[title]" required>
@@ -11,10 +11,17 @@
                     <label class="form-label" for="location">Location</label>
                     <input class="form-control" type="text" id="location" name="campground[location]" required>
                 </div>
-                <div class="mb-3">
+
+
+
+                <!--<div class="mb-3">
+                    <label for="image" class="form-label" name="image"></label>
+                    <input type="file" name="image" id="image" multiple>
+                </div>-->
+                <!--<div class="mb-3">
                     <label class="form-label" for="image">Image Url</label>
                     <input class="form-control" type="text" id="image" name="campground[image]" required>
-                </div>
+                </div>-->
                 <div class="mb-3">
                     <label class="form-label" for="price">Campground Price</label>
                     <div class="input-group">
@@ -28,6 +35,43 @@
                     <textarea class="form-control" type="text" id="description" name="campground[description]"
                         required></textarea>
                 </div>
+                <!-- ########################################################## -->
+                <!-- Refactor this later -->
+
+                <div class="mb-3">
+                    <input class="form-control" type="file" id="image" name="image" multiple>
+                    <label for="image" id="image-label" class="form-label">Choose image(s)...</label>
+                </div>
+
+                <style>
+                    #image-label {
+                        position: absolute;
+                        margin-left: 15px;
+                        margin-top: -34px;
+                        pointer-events: none;
+                        color: #6c757d;
+                        /* Bootstrap's default text-muted color */
+                    }
+
+                    input:focus+#image-label,
+                    input:not(:placeholder-shown)+#image-label {
+                        display: none;
+                    }
+                </style>
+
+                <script>
+                    const fileInput = document.getElementById('image');
+                    const label = document.getElementById('image-label');
+
+                    fileInput.addEventListener('change', function () {
+                        if (fileInput.files.length > 0) {
+                            label.style.display = 'none';
+                        } else {
+                            label.style.display = 'block';
+                        }
+                    });
+                </script>
+                <!-- ########################################################## -->
                 <div class="mb-3">
                     <button class="btn btn-success">Add Campground</button>
                 </div>
